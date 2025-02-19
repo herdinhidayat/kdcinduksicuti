@@ -22,7 +22,7 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/insertdata" method="POST" enctype="multiport/form-data">
+                        <form action="/insertdata" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
@@ -68,9 +68,8 @@
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">No. Handphone</label>
-                                <input type="number" name="nohp" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <label for="exampleInputEmail1" class="form-label">Masukkan Dokumen</label>
+                                <input type="file" name="fotodokumen" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Status Induksi HR</label>

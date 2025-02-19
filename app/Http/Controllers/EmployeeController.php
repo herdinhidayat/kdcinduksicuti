@@ -22,8 +22,8 @@ class EmployeeController extends Controller
     {
         $data = Employee::create($request->all());
         if ($request->hasFile('fotodokumen')) {
-            $request->file('fotodokumen')->move('fotoinduksi/' . $request->file('fotodokumen')->getClientOriginalName());
-            $data->fotodokummen = $request->file('fotodokumen')->getClientOriginalName();
+            $request->file('fotodokumen')->move('fotoinduksi/', $request->file('fotodokumen')->getClientOriginalName());
+            $data->fotodokumen = $request->file('fotodokumen')->getClientOriginalName();
             $data->save();
         }
 

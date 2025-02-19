@@ -38,6 +38,7 @@
                         <th scope="col">No. Handphone</th>
                         <th scope="col">Induksi HR</th>
                         <th scope="col">Induksi SHE</th>
+                        <th scope="col">Foto</th>
                         <th scope="col">Dibuat</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -56,10 +57,14 @@
                             <td>0{{ $row->nohp }}</td>
                             <td>{{ $row->induksihr }}</td>
                             <td>{{ $row->induksishe }}</td>
+                            <td>
+                                <img src="{{ asset('fotoinduksi/' . $row->fotodokumen) }}" alt=""
+                                    style="width: 20px;">
+                            </td>
                             <td>{{ $row->created_at->diffForHumans() }}</td>
                             <td>
                                 <a href="/tampilkandata/{{ $row->id }}" class="btn btn-info">Edit</a>
-                                <a href="/delete/{{ $row->id }}" class="btn btn-danger">Hapus</a>
+                                <a href="#" class="btn btn-danger delete" data-id="{{ $row->id }}">Hapus</a>
                             </td>
                         </tr>
                     @endforeach
@@ -76,6 +81,11 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -86,5 +96,29 @@
     </script>
     -->
 </body>
+
+<script>
+    $('.delete').click(function() {
+        var pegawaiid = $(this).attr('data-id')
+        Swal.fire({
+            title: "Yakin?",
+            text: "Kamu akan Hapus dengan id " + pegawaiid + " ",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Oke, Hapus"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "/delete/" + pegawaiid + " "
+                Swal.fire({
+                    title: "Terhapus",
+                    text: "Datamu Terhapus.",
+                    icon: "success"
+                });
+            }
+        });
+    });
+</script>
 
 </html>
