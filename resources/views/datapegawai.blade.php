@@ -34,6 +34,9 @@
             <div class="col-auto">
                 <a href="/exportpdf" class="btn btn-info">Export PDF NIH!!</a>
             </div>
+            <div class="col-auto">
+                <a href="/exportexcel" class="btn btn-info">Export Excel</a>
+            </div>
 
         </div>
         <div class="row">
