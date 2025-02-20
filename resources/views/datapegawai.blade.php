@@ -22,6 +22,20 @@
 
     <div class="container">
         <a href="/tambahpegawai" class="btn btn-success mb-4">Tambah Induksi +</a>
+
+        <div class="row g-3 align-items-center mb-3">
+            <div class="col-auto">
+                <form action="/pegawai" method="GET">
+                    <input type="search" id="inputPassword6" name="search" class="form-control"
+                        aria-describedby="passwordHelpInline">
+                </form>
+            </div>
+
+            <div class="col-auto">
+                <a href="/exportpdf" class="btn btn-info">Export PDF NIH!!</a>
+            </div>
+
+        </div>
         <div class="row">
             @if ($message = Session::get('success'))
                 <div class="alert alert-success" role="alert">
@@ -48,9 +62,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($data as $row)
+                    @php
+                        $no = 1;
+                    @endphp
+                    @foreach ($data as $index => $row)
                         <tr>
-                            <th scope="row">{{ $row->id }}</th>
+                            <th scope="row">{{ $index + $data->firstItem() }}</th>
                             <td>{{ $row->nama }}</td>
                             <td>{{ $row->nikkaryawan }}</td>
                             <td>{{ $row->sid }}</td>
@@ -63,7 +80,7 @@
                             <td>{{ $row->induksishe }}</td>
                             <td>
                                 <img src="{{ asset('fotoinduksi/' . $row->fotodokumen) }}" alt=""
-                                    style="width: 20px;">
+                                    style="width: 40px;">
                             </td>
                             <td>{{ $row->created_at->diffForHumans() }}</td>
                             <td>
@@ -75,6 +92,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $data->links() }}
         </div>
     </div>
 
@@ -90,6 +108,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
         integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -133,7 +152,9 @@
 </script>
 
 <script>
-    toastr.success('Data has been saved successfully!');
+    @if (Session::has('success'))
+        toastr.success("{{ Session::get('success') }}")
+    @endif
 </script>
 
 </html>
