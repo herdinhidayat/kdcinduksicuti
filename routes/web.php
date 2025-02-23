@@ -2,9 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\LoginController;
+use App\Models\Employee;
 
 Route::get('/', function () {
-    return view('welcome');
+    $jumlahpegawai = Employee::count();
+    $jumlahbeluminduksihr = Employee::where('induksihr', 'Belum')->count();
+    $jumlahbeluminduksishe = Employee::where('induksishe', 'Belum')->count();
+
+    return view('welcome', compact('jumlahpegawai', 'jumlahbeluminduksihr', 'jumlahbeluminduksishe'));
 });
 
 Route::get('/pegawai', [EmployeeController::class, 'index'])->name('pegawai');
@@ -22,3 +28,14 @@ Route::get('/exportpdf', [EmployeeController::class, 'exportpdf'])->name('export
 
 // export excel
 Route::get('/exportexcel', [EmployeeController::class, 'exportexcel'])->name('exportexcel');
+
+// import excel
+Route::post('/importexcel', [EmployeeController::class, 'importexcel'])->name('importexcel');
+
+// login
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('loginproses');
+
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+
+Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');

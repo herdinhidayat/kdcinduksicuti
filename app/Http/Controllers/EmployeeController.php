@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\EmployeeExport;
+use App\Imports\EmployeeImport;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -18,8 +19,6 @@ class EmployeeController extends Controller
         } else {
             $data = Employee::paginate(5);
         }
-
-        $data = Employee::paginate(5);
         return view('datapegawai', compact('data'));
     }
 
@@ -77,5 +76,16 @@ class EmployeeController extends Controller
     public function exportexcel()
     {
         return Excel::download(new EmployeeExport, 'datainduksikdc.xlsx');
+    }
+
+    public function importexcel(Request $request)
+    {
+        $data = $request->file('file');
+
+        $namafile = $data->getClientOriginalName();
+        $data->move('EmployeeData', $namafile);
+
+        Excel::import(new EmployeeImport, \public_path('/EmployeeData/' . $namafile));
+        return \redirect()->back();
     }
 }
