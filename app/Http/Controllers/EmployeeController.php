@@ -8,7 +8,7 @@ use App\Models\Employee;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
-
+use Illuminate\Support\Facades\Session;
 
 class EmployeeController extends Controller
 {
@@ -16,8 +16,10 @@ class EmployeeController extends Controller
     {
         if ($request->has('search')) {
             $data = Employee::where('nama', 'LIKE', '%' . $request->search . '%')->paginate(5);
+            Session::put('halaman_url', request()->fullUrl());
         } else {
             $data = Employee::paginate(5);
+            Session::put('halaman_url', request()->fullUrl());
         }
         return view('datapegawai', compact('data'));
     }
@@ -29,6 +31,11 @@ class EmployeeController extends Controller
 
     public function insertdata(Request $request)
     {
+        $validated = $request->validate([
+            'nama' => 'required|min:7|max:28',
+            'nohp' => 'required|min:11|max:12',
+        ]);
+
         $data = Employee::create($request->all());
         if ($request->hasFile('fotodokumen')) {
             $request->file('fotodokumen')->move('fotoinduksi/', $request->file('fotodokumen')->getClientOriginalName());
@@ -53,6 +60,11 @@ class EmployeeController extends Controller
     {
         $data = Employee::find($id);
         $data->update($request->all());
+        if (session('halaman_url')) {
+            return redirect(Session('halaman_url'))->with('success', 'Data Induksi Di Update');;
+        }
+
+
         return redirect()->route('pegawai')->with('success', 'Data Induksi Di Update');
     }
 

@@ -11,9 +11,9 @@ Route::get('/', function () {
     $jumlahbeluminduksishe = Employee::where('induksishe', 'Belum')->count();
 
     return view('welcome', compact('jumlahpegawai', 'jumlahbeluminduksihr', 'jumlahbeluminduksishe'));
-});
+})->middleware('auth');
 
-Route::get('/pegawai', [EmployeeController::class, 'index'])->name('pegawai');
+Route::get('/pegawai', [EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
 
 Route::get('/tambahpegawai', [EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
 Route::post('/insertdata', [EmployeeController::class, 'insertdata'])->name('insertdata');
@@ -39,3 +39,5 @@ Route::post('/loginproses', [LoginController::class, 'loginproses'])->name('logi
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 
 Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
