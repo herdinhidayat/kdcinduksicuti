@@ -116,7 +116,7 @@
                                 <td>{{ $row->sid }}</td>
                                 <td>{{ $row->usia }}</td>
                                 <td>{{ $row->jabatan }}</td>
-                                <td>{{ $row->perusahaan }}</td>
+                                <td>{{ $row->details->perusahaan }}</td>
                                 <td>{{ $row->jeniskelamin }}</td>
                                 <td>0{{ $row->nohp }}</td>
                                 <td>{{ $row->induksihr }}</td>
@@ -158,13 +158,13 @@
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-                                                                                                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-                                                                                                            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-                                                                                                        </script>
-                                                                                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-                                                                                                            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-                                                                                                        </script>
-                                                                                                        -->
+                                                                                                                                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                                                                                                                                    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+                                                                                                                                </script>
+                                                                                                                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                                                                                                                                    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+                                                                                                                                </script>
+                                                                                                                                -->
     {{-- </body> --}}
 
     <script>

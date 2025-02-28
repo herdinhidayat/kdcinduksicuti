@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('fotodokumen');
             $table->bigInteger('usia');
             $table->string('jabatan');
-            $table->string('perusahaan');
             $table->enum('jeniskelamin', ['Laki-laki', 'Perempuan']);
             $table->bigInteger('nohp');
             $table->enum('induksihr', ['Sudah', 'Belum']);

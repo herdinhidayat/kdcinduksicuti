@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DetailController;
 use App\Models\Employee;
+use GuzzleHttp\Middleware;
 
 Route::get('/', function () {
     $jumlahpegawai = Employee::count();
@@ -12,6 +14,8 @@ Route::get('/', function () {
 
     return view('welcome', compact('jumlahpegawai', 'jumlahbeluminduksihr', 'jumlahbeluminduksishe'));
 })->middleware('auth');
+
+Route::group(['middleware' => ['auth', 'hakakses:admin,user']], function () {});
 
 Route::get('/pegawai', [EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
 
@@ -41,3 +45,9 @@ Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/datadetail', [DetailController::class, 'index'])->name('datadetail')->middleware('auth');
+
+Route::get('/tambahdetail', [DetailController::class, 'create'])->name('tambahdetail');
+
+Route::post('/insertdatadetail', [DetailController::class, 'store'])->name('insertdatadetail');

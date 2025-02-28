@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\EmployeeExport;
 use App\Imports\EmployeeImport;
+use App\Models\Detail;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -26,7 +27,8 @@ class EmployeeController extends Controller
 
     public function tambahpegawai()
     {
-        return view('tambahdata');
+        $datadetail = Detail::all();
+        return view('tambahdata', compact('datadetail'));
     }
 
     public function insertdata(Request $request)

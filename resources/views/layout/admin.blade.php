@@ -262,6 +262,15 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/datadetail" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Data Detail
+
+                                </p>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a href="/logout" class="nav-link">
