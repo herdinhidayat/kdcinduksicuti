@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome', compact('jumlahpegawai', 'jumlahbeluminduksihr', 'jumlahbeluminduksishe'));
 })->middleware('auth');
 
-Route::group(['middleware' => ['auth', 'hakakses:admin,user']], function () {});
-
-Route::get('/pegawai', [EmployeeController::class, 'index'])->name('pegawai')->middleware('auth');
+Route::group(['middleware' => ['auth', 'hakakses:user']], function () {
+    Route::get('/pegawai', [EmployeeController::class, 'index'])->name('pegawai');
+});
 
 Route::get('/tambahpegawai', [EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
 Route::post('/insertdata', [EmployeeController::class, 'insertdata'])->name('insertdata');
