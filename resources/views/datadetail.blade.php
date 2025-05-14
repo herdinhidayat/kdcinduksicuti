@@ -82,7 +82,7 @@
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-                                                                                                                                                                                                                                                                                </script>
-                                                                                                                                                                                                                                                                                    -->
+                                                                                                                                                                                                                                                                                    </script>
+                                                                                                                                                                                                                                                                                        -->
     {{-- </body> --}}
 @endpush

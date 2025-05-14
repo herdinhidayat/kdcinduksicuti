@@ -7,8 +7,8 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Monitoring Data Induksi PT. KDC
-                        </h1>
+                        <h4 class="m-0">Monitoring Kegiatan Live Internal Diskominfo Berau
+                        </h4>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -31,10 +31,9 @@
                             <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Jumlah Karyawan</span>
+                                <span class="info-box-text">Jumlah Kegiatan</span>
                                 <span class="info-box-number">
-                                    {{ $jumlahpegawai }}
-                                    <small>Orang</small>
+                                    {{-- {{ $jumlahpegawai }} --}}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -47,9 +46,8 @@
                             <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Belum Induksi HR</span>
-                                <span class="info-box-number">{{ $jumlahbeluminduksihr }}
-                                    <small>Orang</small>
+                                <span class="info-box-text">Selesai</span>
+                                {{-- <span class="info-box-number">{{ $jumlahbeluminduksihr }} --}}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -66,9 +64,9 @@
                             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Belum Induksi SHE</span>
-                                <span class="info-box-number">{{ $jumlahbeluminduksishe }}
-                                    <small>Orang</small>
+                                <span class="info-box-text">Belum Selesai</span>
+                                {{-- <span class="info-box-number">{{ $jumlahbeluminduksishe }} --}}
+
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
