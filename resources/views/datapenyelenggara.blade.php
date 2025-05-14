@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Data Induksi PT. Kaltim Diamond Coal</h1>
+                        <h1 class="m-0">Data Penyelenggara Live di Lingkungan Diskominfo</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
             </div><!-- /.container-fluid -->
         </div>
         <div class="container">
-            <a href="/tambahdetail" class="btn btn-success mb-4">Tambah Induksi +</a>
+            <a href="/tambahpenyelenggara" class="btn btn-success mb-4">Tambah Instansi +</a>
             {{-- {{ Session::get('halaman_url') }} --}}
 
             <div class="row mt-5">
@@ -40,9 +40,10 @@
                     <thead>
                         <tr>
                             <th scope="col">No.</th>
-                            <th scope="col">Perusahaan</th>
-                            <th scope="col">Site</th>
-                            <th scope="col">Alamat Site</th>
+                            <th scope="col">Nama PIC</th>
+                            <th scope="col">Instansi</th>
+                            <th scope="col">Bidang</th>
+                            <th scope="col">Alamat Instansi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,7 +83,7 @@
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-                                                                                                                                                                                                                                                                                    </script>
-                                                                                                                                                                                                                                                                                        -->
+                                                                                                                                                                                                                                                                                                                                        </script>
+                                                                                                                                                                                                                                                                                                                                            -->
     {{-- </body> --}}
 @endpush

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Induksi PT. KDC</title>
+    <title>Kegiatan Diskominfo Berau</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -263,7 +263,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/datadetail" class="nav-link">
+                            <a href="/penyelenggara" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Data Instansi

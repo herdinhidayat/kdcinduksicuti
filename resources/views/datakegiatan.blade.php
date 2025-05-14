@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Data Induksi PT. Kaltim Diamond Coal</h1>
+                        <h1 class="m-0">Data Kegiatan di Dinas Komunikasi dan Informatika</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
             </div><!-- /.container-fluid -->
         </div>
         <div class="container">
-            <a href="/tambahpegawai" class="btn btn-success mb-4">Tambah Induksi +</a>
+            <a href="/tambahpegawai" class="btn btn-success mb-4">Tambah Kegiatan +</a>
             {{-- {{ Session::get('halaman_url') }} --}}
 
             <div class="row g-3 align-items-center mb-3">
@@ -89,17 +89,12 @@
                     <thead>
                         <tr>
                             <th scope="col">No.</th>
-                            <th scope="col">Nama Lengkap</th>
-                            <th scope="col">Nik Karyawan</th>
-                            <th scope="col">No. SID</th>
-                            <th scope="col">Usia</th>
-                            <th scope="col">Jabatan</th>
-                            <th scope="col">Perusahaan</th>
-                            <th scope="col">Jenis Kelamin</th>
-                            <th scope="col">No. Handphone</th>
-                            <th scope="col">Induksi HR</th>
-                            <th scope="col">Induksi SHE</th>
-                            <th scope="col">Foto</th>
+                            <th scope="col">Nama Pelatihan</th>
+                            <th scope="col">Instansi</th>
+                            <th scope="col">Jadwal Kegiatan</th>
+                            <th scope="col">Jenis Kegiatan</th>
+                            <th scope="col">Jenis</th>
+                            <th scope="col">Link Zoom</th>
                             <th scope="col">Dibuat</th>
                             <th scope="col">Aksi</th>
                         </tr>
@@ -158,13 +153,13 @@
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
-                                                                                                                                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-                                                                                                                                        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-                                                                                                                                    </script>
-                                                                                                                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-                                                                                                                                        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-                                                                                                                                    </script>
-                                                                                                                                    -->
+                                                                                                                                                                                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                                                                                                                                                                                    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+                                                                                                                                                                                </script>
+                                                                                                                                                                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                                                                                                                                                                                    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+                                                                                                                                                                                </script>
+                                                                                                                                                                                -->
     {{-- </body> --}}
 
     <script>

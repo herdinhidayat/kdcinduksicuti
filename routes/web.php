@@ -5,6 +5,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\PenyelenggaraController;
 use App\Models\Employee;
 use GuzzleHttp\Middleware;
 
@@ -53,8 +54,8 @@ Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('re
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-// Route::get('/datadetail', [DetailController::class, 'index'])->name('datadetail')->middleware('auth');
+Route::get('/penyelenggara', [PenyelenggaraController::class, 'index'])->name('penyelenggara')->middleware('auth');
 
-// Route::get('/tambahdetail', [DetailController::class, 'create'])->name('tambahdetail');
+Route::get('/tambahpenyelenggara', [PenyelenggaraController::class, 'create'])->name('tambahpenyelenggara');
 
 // Route::post('/insertdatadetail', [DetailController::class, 'store'])->name('insertdatadetail');
