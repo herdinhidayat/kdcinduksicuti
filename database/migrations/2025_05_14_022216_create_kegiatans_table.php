@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('kegiatans', function (Blueprint $table) {
             $table->id();
             $table->string('namapelatihan');
-            $table->string('instansi');
             $table->date('jadwalkegiatan');
+            $table->string('jam');
             $table->enum('jeniskegiatan', ['Online', 'Offline']);
             $table->enum('jenis', ['Internal', 'Eksternal']);
             $table->string('linkzoom');
-            $table->integer('id_penyelengaraas')->nullable();;
+            $table->enum('info', ['Selesai', 'Belum']);
+            $table->string('fotodokumen');
+            $table->integer('id_penyelenggaras');
             $table->timestamps();
         });
     }

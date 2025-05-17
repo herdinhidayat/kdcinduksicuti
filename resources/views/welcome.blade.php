@@ -7,13 +7,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h4 class="m-0">Monitoring Kegiatan Live Internal Diskominfo Berau
+                        <h4 class="m-0">Monitoring Kegiatan Diskominfo Berau
                         </h4>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v2</li>
+                            <li class="breadcrumb-item active">Dinas Komunikasi dan Informatika Kab. Berau</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -33,7 +33,7 @@
                             <div class="info-box-content">
                                 <span class="info-box-text">Jumlah Kegiatan</span>
                                 <span class="info-box-number">
-                                    {{-- {{ $jumlahpegawai }} --}}
+                                    {{ $jumlahkegiatan }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -46,8 +46,8 @@
                             <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Selesai</span>
-                                {{-- <span class="info-box-number">{{ $jumlahbeluminduksihr }} --}}
+                                <span class="info-box-text">Jumlah Selesai Kegiatan</span>
+                                <span class="info-box-number">{{ $jumlahselesaikegiatan }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -64,8 +64,8 @@
                             <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Belum Selesai</span>
-                                {{-- <span class="info-box-number">{{ $jumlahbeluminduksishe }} --}}
+                                <span class="info-box-text">Jumlah Belum Selesai</span>
+                                <span class="info-box-number">{{ $jumlahbelumkegiatan }}
 
                                 </span>
                             </div>
@@ -74,23 +74,12 @@
                         <!-- /.info-box -->
                     </div>
                     <!-- /.col -->
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">New Members</span>
-                                <span class="info-box-number">6</span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
                     <!-- /.col -->
                 </div>
                 <!-- /.row -->
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
@@ -227,9 +216,9 @@
                         <!-- /.card -->
                     </div>
                     <!-- /.col -->
-                </div>
+                </div> --}}
                 <!-- /.row -->
-
+                {{-- 
                 <!-- Main row -->
                 <div class="row">
                     <!-- Left col -->
@@ -916,12 +905,12 @@
                             <!-- /.card-footer -->
                         </div>
                         <!-- /.card -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </div><!--/. container-fluid -->
-        </section>
-        <!-- /.content -->
+                    </div> --}}
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+    </div><!--/. container-fluid -->
+    </section>
+    <!-- /.content -->
     </div>
 @endsection

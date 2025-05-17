@@ -16,61 +16,46 @@
                             <form action="/updatedata/{{ $data->id }}" method="POST" enctype="multiport/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                                    <input type="text" name="nama" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->nama }}">
+                                    <label for="exampleInputEmail1" class="form-label">Nama Pelatihan/Kegiatan</label>
+                                    <input type="text" name="namapelatihan" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->namapelatihan }}">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Nik</label>
-                                    <input type="text" name="nikkaryawan" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->nikkaryawan }}">
+                                    <label for="exampleInputEmail1" class="form-label">Jadwal Kegiatan</label>
+                                    <input type="date" name="jadwalkegiatan" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->jadwalkegiatan }}">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">No. SID</label>
-                                    <input type="text" name="sid" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->sid }}">
+                                    <label for="exampleInputEmail1" class="form-label">Jam</label>
+                                    <input type="text" name="jam" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->jam }}">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Usia</label>
-                                    <input type="number" name="usia" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->usia }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Jabatan</label>
-                                    <input type="text" name="jabatan" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->jabatan }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Perusahaan</label>
-                                    <input type="text" name="perusahaan" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->perusahaan }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
-                                    <select class="form-select" name="jeniskelamin" aria-label="Default select example">
-                                        <option selected>{{ $data->jeniskelamin }}</option>
-                                        <option value="Laki-laki">Laki-Laki</option>
-                                        <option value="Perempuan">Perempuan</option>
+                                    <label for="exampleInputEmail1" class="form-label">Jenis Kegiatan</label>
+                                    <select class="form-select" name="jeniskegiatan" aria-label="Default select example">
+                                        <option selected>Pilih Jenis Kegiatan</option>
+                                        <option value="Online">Online</option>
+                                        <option value="Offline">Offline</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">No. HP</label>
-                                    <input type="number" name="nohp" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" value="{{ $data->nohp }}">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Status Induksi HR</label>
-                                    <select class="form-select" name="induksihr" aria-label="Default select example">
-                                        <option selected>{{ $data->induksihr }}</option>
-                                        <option value="Sudah">Sudah</option>
-                                        <option value="Belum">Belum</option>
+                                    <label for="exampleInputEmail1" class="form-label">Jenis</label>
+                                    <select class="form-select" name="jenis" aria-label="Default select example">
+                                        <option selected>Pilih Jenis</option>
+                                        <option value="Internal">Internal</option>
+                                        <option value="Eksternal">Eksternal</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Status Induksi SHE</label>
-                                    <select class="form-select" name="induksishe" aria-label="Default select example">
-                                        <option selected>{{ $data->induksishe }}</option>
-                                        <option value="Sudah">Sudah</option>
+                                    <label for="exampleInputEmail1" class="form-label">Link Zoom</label>
+                                    <input type="text" name="linkzoom" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" value="{{ $data->linkzoom }}">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Info</label>
+                                    <select class="form-select" name="info" aria-label="Default select example">
+                                        <option selected>Pilih Info</option>
+                                        <option value="Selesai">Selesai</option>
                                         <option value="Belum">Belum</option>
                                     </select>
                                 </div>
@@ -92,12 +77,12 @@
 
         <!-- Option 2: Separate Popper and Bootstrap JS -->
         <!--
-                                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-                                        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-                                    </script>
-                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-                                        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-                                    </script>
-                                    -->
+                                                                                                                                                                                                                                                                                                                    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                                                                                                                                                                                                                                                                                                                        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+                                                                                                                                                                                                                                                                                                                    </script>
+                                                                                                                                                                                                                                                                                                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                                                                                                                                                                                                                                                                                                                        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+                                                                                                                                                                                                                                                                                                                    </script>
+                                                                                                                                                                                                                                                                                                                    -->
     </body>
 @endsection

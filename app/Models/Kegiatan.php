@@ -16,7 +16,7 @@ class Kegiatan extends Model
 
 
 
-    public function details()
+    public function penyelenggaras()
     {
         return $this->belongsTo(Penyelenggara::class, 'id_penyelenggaras', 'id');
     }
